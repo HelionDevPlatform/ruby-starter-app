@@ -1,0 +1,206 @@
+<!-- MAIN NAVIGATION -->
+<div class="container" style="margin-bottom:30px">
+  <h2>ALS Services<span style="padding-left:10px;font-size:.6em">(these are built into Cloud Foundry and enabled by your admin)</span></h2>
+  <div id="als-service-buttons">
+
+  </div>
+  <div class="collapsediv" id="filesystem_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the filesystem service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service filesystem <span class="app-name"></span>-filesystem <span class="app-name"></span></pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>${name}-filesystem:<br />
+                    &nbsp;&nbsp;type: filesystem
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="harbor_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the harbor port service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service harbor <span class="app-name"></span>-harbor <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-harbor:<br />
+                    &nbsp;&nbsp;type: harbor
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="memcached_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the memecached service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service memcached <span class="app-name"></span>-memcached <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-memcached:<br />
+                    &nbsp;&nbsp;type: memcached
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="mongodb_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the mongo service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service mongodb <span class="app-name"></span>-mongodb <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-mongodb:<br />
+                    &nbsp;&nbsp;type: mongodb
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="mysql_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.
+        The ENV['DATABASE_URL'] which Rails uses to connect to the database, is populated with the information below.
+      </div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-success" role="alert">This service was created during the microcloud creation process. The steps below will make it available for your app.</div>
+      <p>To create an instance of the mysql service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service mysql <span class="app-name"></span>-mysql <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-mysql:<br />
+                    &nbsp;&nbsp;type: mysql
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="postgresql_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the postgres service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service postgresql <span class="app-name"></span>-postgresql <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-postgresql:<br />
+                    &nbsp;&nbsp;type: postgresql
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push</pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="rabbitmq3_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the rabbit service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service rabbitmq3 <span class="app-name"></span>-rabbitmq3 <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-rabbitmq3:<br />
+                    &nbsp;&nbsp;type: rabbitmq3
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="mssql2014_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the sql server service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service mssql2014 <span class="app-name"></span>-mssql2014 <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-mssql2014:<br />
+                    &nbsp;&nbsp;type: mssql2014
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <div class="collapsediv" id="redis_div">
+    <div class="well on">
+      <div class='alert alert-success' role='alert'>This service is enabled and bound to your app.  Use the connection info and code snippets below to use it in your app.</div>
+    </div>
+    <div class="well off">
+      <div class="alert alert-warning" role="alert">This service was not provisioned during the microcloud creation process.  Create this service using the <a href="http://docs.hpcloud.com/#devplatform/1.3/helion/CLI/cfmgmt_growcluster_addservice.html" class="cf-mgmt">cf-mgmt tool</a>.</div>
+      <p>To create an instance of the redis service, execute the  commands below in the directory containing the your app:</p>
+                <pre>helion create-service redis <span class="app-name"></span>-redis <span class="app-name"></span>
+                </pre>
+      <p>You can also uncomment the following in the manifest.yml and push the app again.</p>
+                <pre>
+                    ${name}-redis:<br />
+                    &nbsp;&nbsp;type: redis
+                </pre>
+      <p>After the steps above, deploy the app and refresh this page. </p>
+                <pre>helion push
+                </pre>
+    </div>
+  </div>
+  <h2>User-Provided Services<span style="padding-left:10px;font-size:.6em">(these are externally provisioned and enabled)</span></h2>
+  <div id="buttons">
+
+  </div>
+  <div id="found_userprovided_services">
+    <div id="userprovided-service-buttons">
+
+    </div>
+
+    <div id='userprovided_divs'>
+      <div id="userprovided-services-howto_div" class="well off" style="display:none">
+        <div class="alert alert-warning" role="alert">
+          No <a href="http://docs.hpcloud.com/devplatform/1.2/helion/user/services/1.2user-provided.html" class="user-provided-service">User Provided Services</a> have been created and bound to this app. Create and bind to one by following the steps below.
+        </div>
+        <pre>helion create-service user-provided [name of service]</pre>
+        <p>The helion CLI will prompt you to specify credential keys and values (note defaults of hostname, port, password):</p>
+        <pre>Which credentials to use for connections [hostname, port, password]:</pre>
+        <p>
+          You can override these defaults with your own credential keys, separate keys with commas, and the CLI will then prompt you for values of each credential key.<br />
+          When you've created your service, you need to bind it to specific applications
+        </p>
+        <pre>helion bind-service [service name] [application name]</pre>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
