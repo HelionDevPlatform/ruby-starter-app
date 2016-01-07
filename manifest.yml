@@ -3,8 +3,9 @@ applications:
 - name: ruby-starter-app
   memory: 512M
   instances: 1
-  services:
-   - ruby-starter-app-mysql-db
+  #services:
+   # ${name}-db: mysql
+   #- ruby-starter-app-mysql-db
    #- ruby-starter-app-postgres-db
    #- ruby-starter-app-rabbitmq3
    #- ruby-starter-app-mongo-db
@@ -15,12 +16,3 @@ applications:
   env:
     USERSERVICE: http://abc.com
     CFMGMTTOOL: http://pqr.com
-  helion:
-    hooks:
-      pre-running:
-      # change the DATABASE_URL scheme from mysql:// to mysql2:// since we aer using mysql2 gem. If you don't
-      # want to use this, you can use mysql gem too instead of mysql2 gem
-      - export DATABASE_URL=`echo $DATABASE_URL | sed 's/mysql/mysql2/'`
-      # run database migration after the DATABASE_URL has been changed
-      # to use the mysql2:// scheme
-      - rake db:migrate
