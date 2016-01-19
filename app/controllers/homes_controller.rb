@@ -21,8 +21,8 @@ class HomesController < ApplicationController
 
   def vcap_links
     @vcap_links = {}
-    @vcap_links[:USERSERVICE] = ENV['USERSERVICE'] if ENV['USERSERVICE'].present?
-    @vcap_links[:CFMGMTTOOL] = ENV['CFMGMTTOOL'] if ENV['CFMGMTTOOL'].present?
+    @vcap_links[:USER_SERVICE] = ENV['USER_SERVICE'] if ENV['USER_SERVICE'].present?
+    @vcap_links[:CF_MGMT_TOOL] = ENV['CF_MGMT_TOOL'] if ENV['CF_MGMT_TOOL'].present?
     render json: @vcap_links
   end
 

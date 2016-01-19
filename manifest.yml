@@ -8,21 +8,21 @@ applications:
          type: mysql
        #${name}-postgres-db:
        #  type: postgresql
-       ${name}-rabbitmq3:
-         type: rabbitmq3
+       #${name}-rabbitmq3:
+       #  type: rabbitmq3
        #${name}-mongo-db:
         # type: mongodb
-       ${name}-filesystem:
-         type: filesystem
-       ${name}-redis:
-          type: redis
+       #${name}-filesystem:
+       #  type: filesystem
+       #${name}-redis:
+       #   type: redis
        #${name}-harbor:
         # type: harbor
        #${name}-memcached:
         # type: memcached
   env:
-    USERSERVICE: http://abc.com
-    CFMGMTTOOL: http://pqr.com
+    USER_SERVICE: http://docs.hpcloud.com/#devplatform/2.0/helion/user/services/user-provided.html
+    CF_MGMT_TOOL: http://docs.hpcloud.com/#devplatform/2.0/helion/CLI/cfmgmt_growcluster_addservice.html
   stackato:
     hooks:
       pre-running:
